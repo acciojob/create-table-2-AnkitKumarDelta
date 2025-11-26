@@ -3,7 +3,12 @@ function createTable() {
     let rn = Number(prompt("Input number of rows"));
 	let cn = Number(prompt("Input number of columns"));
 
-	let table = document.createElement('table');
+	if (!rn || !cn || rn <= 0 || cn <= 0) {
+    alert("Invalid input");
+    return;
+  }
+	
+	let table = document.querySelector('#myTable');
 	table.id = "myTable"
 	for(let i=0;i<rn;i++){
 		let tr = document.createElement('tr');
